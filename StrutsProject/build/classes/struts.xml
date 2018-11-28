@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <package name="default" namespace="/" extends="struts-default">
+	    <global-results>
+	    	<result name="error">/myerror.jsp</result>
+	    </global-results>
+	    
+	    <!-- 添加用户 -->
+	    <action name="add" class="com.teng.action.UserAction" method="add">
+	    	<result name="add" type="redirect">
+	    		findAll
+	    	</result>
+	    </action>
+	    
+	    <!-- 查看所有用户 -->
+	    <action name="findAll" class="com.teng.action.UserAction" method="findAll">
+	    	<result name="findAll">
+	    		/seeAll.jsp
+	    	</result>
+	    </action>
+	    
+	    <!-- 删除一个用户 -->
+	    <action name="delete" class="com.teng.action.UserAction" method="delete">
+	    	<result name="delete" type="redirect">
+	    		findAll
+	    	</result>
+	    </action>
+	    
+	    <!-- 修改一个用户信息 -->
+	    <action name="update" class="com.teng.action.UserAction" method="update">
+	    	<result name="update" type="redirect">
+	    		findAll
+	    	</result>
+	    </action>
+	    
+	    <!-- 查找一个用户信息 -->
+	    <action name="findOne" class="com.teng.action.UserAction" method="findOne">
+	    	<result name="findOne">
+	    		/update.jsp
+	    	</result>
+	    </action>
+	    
+	    <!-- 模糊查询 -->
+	    <action name="search" class="com.teng.action.UserAction" method="search">
+	    	<result name="search">
+	    		/seeAll.jsp
+	    	</result>
+	    </action>
+	    
+	    <!-- 用户登录 -->
+	    <action name="login" class="com.teng.action.UserAction" method="login">
+	    	<result name="login" type="redirect">
+	    			/index.jsp
+	    	</result>
+	    	<result name="loginerror">
+	    	    /login.jsp
+	    	</result>
+	    </action>
+	    
+	</package>
+</struts>
