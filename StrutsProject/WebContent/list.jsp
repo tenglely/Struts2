@@ -20,7 +20,7 @@
 			<a role="menuitem" tabindex="-1" href="main.jsp" target="show">添加用户</a>
 		</li>
 		<li role="presentation">
-			<a role="menuitem" tabindex="-1" href="seeAll.jsp" target="show">查看用户</a>
+			<a role="menuitem" tabindex="-1" href="search" target="show">查看用户</a>
 		</li>	
 	</ul>
 </div>
